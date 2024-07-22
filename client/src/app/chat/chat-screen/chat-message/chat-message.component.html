@@ -1,0 +1,16 @@
+<div
+  class="message-box"
+  [class.owner]="isOwnMessage()"
+  [class.non-owner]="!isOwnMessage()"
+>
+  @if (!isOwnMessage()) {
+  <span>{{ message().username }}</span>
+  }
+  <div
+    class="message"
+    [class.owner-message]="isOwnMessage()"
+    [class.non-owner-message]="!isOwnMessage()"
+  >
+    {{ message().message }}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.chat-app {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 0.5rem;
+  height: calc(100vh - 56px);
+}
+
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+}
+

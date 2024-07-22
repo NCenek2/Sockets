@@ -1,0 +1,10 @@
+<a
+  (click)="changeCurrentRoom()"
+  class="list-group-item list-group-item-action"
+  [class.active]="isActive()"
+  [id]="'list-' + room() + '-list'"
+  data-bs-toggle="list"
+  [href]="'#list-' + room()"
+  role="tab"
+  >{{ room() }}</a
+>
