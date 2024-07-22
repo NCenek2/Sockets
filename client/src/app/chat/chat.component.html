@@ -1,0 +1,7 @@
+<main class="chat-app">
+  <section class="chat-section" #chatSection>
+    <app-chat-screen />
+    <app-chat-box (scrollToBottomEvent)="scrollToBottom()" />
+  </section>
+  <app-chat-rooms />
+</main>

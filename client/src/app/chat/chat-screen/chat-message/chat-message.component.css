@@ -1,0 +1,31 @@
+.message-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0.25rem;
+}
+
+.message {
+  border-radius: 100vmax;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+.owner-message {
+  background-color: aliceblue;
+  align-self: end;
+}
+
+.non-owner-message {
+  align-self: start;
+  background-color: greenyellow;
+}
+
+.owner {
+  margin-left: auto;
+}
+
+.non-owner {
+  margin-right: auto;
+}

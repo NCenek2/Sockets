@@ -1,0 +1,15 @@
+<div class="chat-rooms">
+  <header class="rooms-header">
+    <h2>Rooms</h2>
+    @if (currentRoom() !== ""){
+    <button (click)="leaveRoom()" class="btn btn-sm btn-outline-dark">
+      Leave
+    </button>
+    }
+  </header>
+  <div class="list-group rooms" id="list-tab" role="tablist">
+    @if (rooms().length > 0) { @for (room of rooms(); track room) {
+    <app-chat-room [room]="room" />
+    } }
+  </div>
+</div>

@@ -1,0 +1,19 @@
+:host {
+  overflow-y: auto;
+}
+
+.chat-rooms {
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms-header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.25rem;
+}
+
+.rooms {
+  flex-grow: 1;
+  overflow-y: auto;
+}

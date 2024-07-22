@@ -1,0 +1,42 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Enter a Username</h5>
+      </div>
+      <div class="modal-body input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="user123"
+          aria-label="User's username"
+          aria-describedby="button-addon2"
+        />
+      </div>
+      @if (username().trim() !== "") {
+      <div class="modal-footer">
+        <button
+          type="button"
+          (click)="enterChat()"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+        >
+          Continue
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+</div>
