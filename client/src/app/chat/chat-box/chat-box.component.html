@@ -3,7 +3,14 @@
   [(ngModel)]="message"
   id="message"
   name="message"
+  (keydown.enter)="send()"
 ></textarea>
-<button type="submit" class="btn btn-outline-dark" (click)="send()">
+<button
+  type="submit"
+  class="btn btn-outline-dark"
+  (click)="send()"
+  (keydown.enter)="send(); $event.preventDefault()"
+  [disabled]="!canSend()"
+>
   Send
 </button>

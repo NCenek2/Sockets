@@ -1,4 +1,6 @@
 <form (ngSubmit)="joinRoom()" class="join-room">
   <input id="room" name="room" [(ngModel)]="room" class="w-25" />
-  <button type="submit" class="btn btn-outline-dark">Join</button>
+  <button type="submit" class="btn btn-outline-dark" [disabled]="!canJoin()" (keydown.enter) = "joinRoom()">
+    Join
+  </button>
 </form>

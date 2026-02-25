@@ -14,19 +14,22 @@ export class ModalComponent {
   router = inject(Router);
   usersService = inject(UsersService);
 
+  private myModal: any;
+
   ngOnInit(): void {
-    const myModal = new bootstrap.Modal(
+    this.myModal = new bootstrap.Modal(
       document.getElementById('staticBackdrop'),
       {
         backdrop: 'static',
         keyboard: false,
-      }
+      },
     );
-    myModal.show();
+    this.myModal.show();
   }
 
   enterChat() {
     this.usersService.setUserName(this.username());
     this.router.navigate(['/chat']);
+    this.myModal.hide();
   }
 }

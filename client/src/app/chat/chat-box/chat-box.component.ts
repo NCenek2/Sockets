@@ -1,4 +1,4 @@
-import { Component, inject, output, signal } from '@angular/core';
+import { Component, computed, inject, output, signal } from '@angular/core';
 import { SocketService } from '../../socket/socket.service';
 
 @Component({
@@ -8,12 +8,13 @@ import { SocketService } from '../../socket/socket.service';
 })
 export class ChatBoxComponent {
   message = signal<string>('');
+  canSend = computed(() => this.message().trim() !== '');
   private socketService = inject(SocketService);
   scrollToBottomEvent = output<void>();
 
   send() {
-    if (this.message() === '') return;
     this.scrollToBottomEvent.emit();
     this.message.set(this.socketService.messageEmitter(this.message()));
+    this.message.set('');
   }
 }
