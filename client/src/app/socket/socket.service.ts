@@ -1,8 +1,9 @@
 import { DestroyRef, inject, Injectable, signal } from '@angular/core';
 import { io, Socket } from 'socket.io-client';
+import { environment } from '../../environments/environment';
 import { ChatService } from '../chat/chat.service';
-import { UsersService } from '../users/users.service';
 import { MessageDto } from '../models/Message.dto';
+import { UsersService } from '../users/users.service';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,7 @@ export class SocketService {
 
   setSocket() {
     if (!this._socket()) {
-      this._socket.set(io('http://localhost:5000'));
+      this._socket.set(io(environment.apiUrl));
     }
   }
 
