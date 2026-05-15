@@ -1,20 +1,13 @@
 services:
   socket-server:
-    build: ./
+    build: ./server/
     ports:
       - '5000:5000'
     expose:
       - '5000'
-  socket-client-1:
+  socket-client:
     build: ./client/
     ports:
       - '8080:8080'
-    depends_on:
-      - socket-server
-
-  socket-client-2:
-    build: ./client/
-    ports:
-      - '8081:8080'
     depends_on:
       - socket-server
