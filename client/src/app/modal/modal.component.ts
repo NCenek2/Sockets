@@ -1,4 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../users/users.service';
 
@@ -8,9 +9,10 @@ declare var bootstrap: any;
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
+  imports: [FormsModule],
 })
 export class ModalComponent {
-  username = signal<string>('');
+  username = model('');
   router = inject(Router);
   usersService = inject(UsersService);
 

@@ -1,6 +1,7 @@
 <textarea
   class="chat-messagebox"
   [value]="message()"
+  (input)="message.set($any($event.target).value)"
   id="message"
   name="message"
   (keydown.enter)="send()"
