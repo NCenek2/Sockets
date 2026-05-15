@@ -1,6 +1,6 @@
 <textarea
   class="chat-messagebox"
-  [(ngModel)]="message"
+  [value]="message()"
   id="message"
   name="message"
   (keydown.enter)="send()"

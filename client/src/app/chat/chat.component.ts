@@ -1,12 +1,15 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
-import { ChatService } from './chat.service';
 import { UsersService } from '../users/users.service';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
+import { ChatRoomsComponent } from './chat-rooms/chat-rooms.component';
 import { ChatScreenComponent } from './chat-screen/chat-screen.component';
+import { ChatService } from './chat.service';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css',
+  imports: [ChatScreenComponent, ChatBoxComponent, ChatRoomsComponent],
 })
 export class ChatComponent {
   @ViewChild('chatSection', { static: false })
